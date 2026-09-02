@@ -1,0 +1,7 @@
+- name: Hello Dosto
+  hosts: linux2
+  become: yes
+
+  tasks:
+    - name: Say Hello
+      command: echo "Hello all"

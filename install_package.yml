@@ -1,0 +1,9 @@
+- name: Install Package
+  hosts: linux2
+  become: yes
+
+  tasks:
+    - name: Install Package
+      apt:
+        name: tree
+        state: present

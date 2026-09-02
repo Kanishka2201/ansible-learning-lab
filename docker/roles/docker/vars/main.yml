@@ -1,0 +1,4 @@
+---
+# vars file for role/docker
+docker_users:
+  - azureuser

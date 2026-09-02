@@ -1,0 +1,35 @@
+---
+# tasks file for role/docker
+- name: Update all packages to their latest version
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: latest
+
+- name: Add users to Docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: true
+  loop: "{{ docker_users }}"
+
+    #- name: Restart Docker
+    #  service:
+    #   name: docker.io
+    #   state: restarted
+
+- name: Register Docker Version
+  command: docker --version
+  register: docker_version
+
+- name: show docker version
+  debug:
+    msg: "{{ docker_version }}"
+
+- name: show running container
+  command: docker ps
+

@@ -1,0 +1,10 @@
+- name: Hello Dosto
+  hosts: linux2
+  become: yes
+
+  vars:
+    - name: Dosto
+
+  tasks:
+    - name: Greet user
+      command: echo "Hello {{ name }}"
