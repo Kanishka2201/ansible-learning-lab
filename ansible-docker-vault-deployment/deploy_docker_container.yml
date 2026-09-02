@@ -1,0 +1,38 @@
+---
+- name: Secure Docker Container Deployment
+  hosts: linux2
+  become: yes
+
+  vars_files:
+    - docker_vault.yml
+
+  tasks:
+
+    - name: Login to Docker Hub
+      community.docker.docker_login:
+        username: "{{ docker_username }}"
+        password: "{{ docker_password }}"
+      no_log: true
+
+    - name: Pull Nginx image
+      community.docker.docker_image:
+        name: nginx:latest
+        source: pull
+
+    - name: Run Nginx Container
+      community.docker.docker_container:
+        name: nginx-container
+        image: nginx:latest
+        state: started
+        restart_policy: unless-stopped
+        published_ports:
+          - "8080:80"
+
+    - name: show running containers
+      command:
+        cmd: docker ps
+      register: docker_containers
+
+    - name: Display running container
+      debug:
+        var: docker_containers.stdout_lines
