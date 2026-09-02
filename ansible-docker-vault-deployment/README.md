@@ -712,37 +712,3 @@ This project is part of my ongoing hands-on learning in **Linux, Ansible, Docker
 ## Repository
 
 [View this project on GitHub](https://github.com/Kanishka2201/ansible-learning-lab/tree/main/ansible-docker-vault-deployment)
-
----
-
-### How to add this README
-
-From your project folder:
-
-```bash
-cd /home/azureuser/playbooks/ansible-docker-vault-deployment
-```
-
-Open the file:
-
-```bash
-nano README.md
-```
-
-Replace the existing content with the README above, then save using:
-
-```text
-Ctrl + O
-Enter
-Ctrl + X
-```
-
-After that:
-
-```bash
-cd /home/azureuser/playbooks
-git add ansible-docker-vault-deployment/README.md
-git commit -m "Update detailed project documentation"
-git push
-```
-
