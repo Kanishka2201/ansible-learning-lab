@@ -4,8 +4,6 @@
 
 ## Project Overview
 
-This project is part of my Ansible and DevOps learning journey.
-
 In this project, I used **Ansible to install Docker on an Ubuntu server and deploy an Nginx Docker container**. I also used **Ansible Vault** to securely store Docker Hub credentials instead of keeping the credentials directly inside the Ansible playbook.
 
 The main purpose of this project was to understand how Ansible, Docker, Docker Hub, and Ansible Vault can work together in a real deployment workflow.
@@ -655,22 +653,6 @@ Through this project, I practiced:
 * Registering command output in Ansible
 * Debugging Ansible errors
 * Using Git and GitHub to manage DevOps projects
-
----
-
-# Future Improvements
-
-In the next version of this project, I would like to add:
-
-* Docker Compose deployment
-* Multiple containers
-* Environment variables using Ansible Vault
-* Health checks
-* Container monitoring
-* Automated container updates
-* Deploying a custom application instead of only Nginx
-* CI/CD integration using GitHub Actions
-* Terraform to provision the infrastructure before Ansible configuration
 
 ---
 
