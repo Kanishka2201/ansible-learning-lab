@@ -1,0 +1,9 @@
+---
+- name: Database Setup Play
+  hosts: dbservers
+  tasks:
+    - name: Create database User # this os a Task
+      mysql_user:
+        name: admin
+        password: passwd
+        state: present
